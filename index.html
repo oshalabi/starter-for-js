@@ -240,7 +240,6 @@
     };
 
     pingButton.addEventListener("click", sendPing);
-    console.log(import.meta.env.VITE_APPWRITE_ENDPOINT);
     document.getElementById('project-endpoint').textContent = import.meta.env.VITE_APPWRITE_ENDPOINT;
     document.getElementById('project-id').textContent = import.meta.env.VITE_APPWRITE_PROJECT_ID;
     document.getElementById('project-name').textContent = import.meta.env.VITE_APPWRITE_PROJECT_NAME;
