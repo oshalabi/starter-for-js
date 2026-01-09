@@ -20,13 +20,13 @@ window.addEventListener("DOMContentLoaded", () => {
             .then(() => {
                 status.innerText = "Email verified! Redirecting to app...";
                 setTimeout(() => {
-                    window.location.href = `myapp://verify?verified=true`;
+                    window.location.href = `${import.meta.env.VITE_APP_DEEP_LINK}?verified=false`;
                 }, 2000);
             })
             .catch((err) => {
                 logToTerminal(`Verification failed=${err}`);
                 console.error("Verification failed", err);
-                window.location.href = `myapp://verify?verified=false`;
+                window.location.href = `${import.meta.env.VITE_APP_DEEP_LINK}?verified=false`;
             });
     } else {
         status.innerText = "Missing verification parameters.";
@@ -34,7 +34,10 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function logToTerminal(data) {
-    fetch("http://10.0.2.2:3000/log", {
+    const logEndpoint = import.meta.env.VITE_LOG_ENDPOINT;
+    if (!logEndpoint) return; // Skip logging if no endpoint is defined
+
+    fetch(logEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ log: data }),
