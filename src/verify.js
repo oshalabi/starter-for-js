@@ -15,19 +15,23 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     if (userId && secret) {
-        account
-            .updateVerification(userId, secret)
-            .then(() => {
-                status.innerText = "Email verified! Redirecting to app...";
-                setTimeout(() => {
-                    window.location.href = `${import.meta.env.VITE_APP_DEEP_LINK}?verified=true`;
-                }, 2000);
-            })
-            .catch((err) => {
-                logToTerminal(`Verification failed=${err}`);
-                console.error("Verification failed", err);
-                window.location.href = `${import.meta.env.VITE_APP_DEEP_LINK}?verified=false`;
-            });
+        status.innerText = "Email verified! Redirecting to app...";
+        setTimeout(() => {
+            window.location.href = `${import.meta.env.VITE_APP_DEEP_LINK}?verify?userId=${userId}&secret=${secret}`;
+        }, 2000);
+        // account
+        //     .updateVerification(userId, secret)
+        //     .then(() => {
+        //         status.innerText = "Email verified! Redirecting to app...";
+        //         setTimeout(() => {
+        //             window.location.href = `${import.meta.env.VITE_APP_DEEP_LINK}?verify?userId=${userId}&secret=${secret}`;
+        //         }, 2000);
+        //     })
+        //     .catch((err) => {
+        //         logToTerminal(`Verification failed=${err}`);
+        //         console.error("Verification failed", err);
+        //         window.location.href = `${import.meta.env.VITE_APP_DEEP_LINK}?verified=false`;
+        //     });
     } else {
         status.innerText = "Missing verification parameters.";
     }
