@@ -6,7 +6,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const userId = params.get("userId");
     const secret = params.get("secret");
-    const expire = params.get("expire");
 
     logToTerminal(`Verifying: userId=${userId}, secret=${secret}`);
 
@@ -17,17 +16,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (userId && secret) {
         account
-            // .updateVerification(userId, secret)
+            .updateVerification(userId, secret)
             .then(() => {
                 status.innerText = "Email verified! Redirecting to app...";
                 setTimeout(() => {
-                    window.location.href = `${import.meta.env.VITE_APP_DEEP_LINK}?userId=${userId}&secret=${secret}&expire=${expire}`;
+                    window.location.href = `${import.meta.env.VITE_APP_DEEP_LINK}?verified=true`;
                 }, 2000);
             })
             .catch((err) => {
                 logToTerminal(`Verification failed=${err}`);
                 console.error("Verification failed", err);
-                window.location.href = `${import.meta.env.VITE_APP_DEEP_LINK}?userId=${userId}&secret=${secret}&expire=${expire}`;
+                window.location.href = `${import.meta.env.VITE_APP_DEEP_LINK}?verified=false`;
             });
     } else {
         status.innerText = "Missing verification parameters.";
