@@ -1,0 +1,67 @@
+{
+    "branding": {
+        "year": "2026",
+        "appName": "Muslim App",
+        "tagline": "Find Your Perfect Match",
+        "supportEmail": "support@muslimapp.com",
+        "websiteUrl": "https://muslimapp.com"
+    },
+    "colors": {
+        "primary": "#2D5F3F",
+        "primaryDark": "#1E4029",
+        "primaryLight": "#4A8B5E",
+        "secondary": "#D4AF37",
+        "secondaryDark": "#B8941F",
+        "secondaryLight": "#E5C85A",
+        "accent": "#8B4513",
+        "background": "#FFFFFF",
+        "surface": "#F8F9FA",
+        "surfaceDark": "#E9ECEF",
+        "text": "#212529",
+        "textSecondary": "#6C757D",
+        "textLight": "#ADB5BD",
+        "success": "#28A745",
+        "warning": "#FFC107",
+        "error": "#DC3545",
+        "info": "#17A2B8",
+        "border": "#DEE2E6",
+        "shadow": "rgba(0, 0, 0, 0.1)"
+    },
+    "typography": {
+        "fontFamily": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+        "headingFontFamily": "'Georgia', serif",
+        "fontSize": {
+            "small": "14px",
+            "base": "16px",
+            "large": "18px",
+            "h1": "32px",
+            "h2": "28px",
+            "h3": "24px",
+            "h4": "20px"
+        },
+        "fontWeight": {
+            "normal": "400",
+            "medium": "500",
+            "semibold": "600",
+            "bold": "700"
+        }
+    },
+    "spacing": {
+        "xs": "8px",
+        "sm": "16px",
+        "md": "24px",
+        "lg": "32px",
+        "xl": "48px"
+    },
+    "borderRadius": {
+        "small": "4px",
+        "medium": "8px",
+        "large": "12px",
+        "full": "9999px"
+    },
+    "logo": {
+        "url": "{{LOGO_URL}}",
+        "width": "150px",
+        "height": "auto"
+    }
+}

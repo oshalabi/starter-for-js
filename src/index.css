@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #2D5F3F;
+  --color-primary-dark: #1E4029;
+  --color-primary-light: #4A8B5E;
+  --color-secondary: #D4AF37;
+  --color-background: #FFFFFF;
+  --color-surface: #F8F9FA;
+  --color-text: #212529;
+  --color-text-secondary: #6C757D;
+  --font-heading: 'Georgia', serif;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+}
+
+.heading-font {
+  font-family: var(--font-heading);
+}
